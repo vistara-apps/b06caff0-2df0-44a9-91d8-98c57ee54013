@@ -156,12 +156,12 @@ export function RecordButton({ language, variant = 'primary', onRecordingSaved }
         
         <div>
           <label className="block text-sm font-medium text-gray-200 mb-2">
-            Notes (Optional)
+            {t.notes} (Optional)
           </label>
           <textarea
             value={notes}
             onChange={(e) => setNotes(e.target.value)}
-            placeholder="Add any notes about this encounter..."
+            placeholder={t.addNotes}
             className="w-full px-3 py-2 bg-white bg-opacity-10 border border-white border-opacity-20 rounded-md text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-500"
             rows={3}
           />
@@ -173,13 +173,13 @@ export function RecordButton({ language, variant = 'primary', onRecordingSaved }
             className="flex-1 btn-primary flex items-center justify-center space-x-2"
           >
             <Save className="w-4 h-4" />
-            <span>Save Recording</span>
+            <span>{t.saveRecording}</span>
           </button>
           <button
             onClick={cancelSave}
             className="flex-1 btn-secondary"
           >
-            Cancel
+            {t.cancel}
           </button>
         </div>
       </div>
@@ -218,7 +218,7 @@ export function RecordButton({ language, variant = 'primary', onRecordingSaved }
           )}
           {!isRecording && (
             <p className="text-gray-300 text-sm">
-              Tap to start audio recording
+              {t.tapToStart}
             </p>
           )}
         </div>
