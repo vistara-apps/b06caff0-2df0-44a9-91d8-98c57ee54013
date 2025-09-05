@@ -1,7 +1,7 @@
 import { LocationData } from './types';
 import { US_STATES } from './constants';
 
-export function cn(...classes: string[]) {
+export function cn(...classes: (string | boolean | undefined | null)[]) {
   return classes.filter(Boolean).join(' ');
 }
 
