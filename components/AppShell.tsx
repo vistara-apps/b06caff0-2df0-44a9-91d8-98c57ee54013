@@ -13,8 +13,8 @@ export function AppShell({ children, variant = 'default', className }: AppShellP
   return (
     <div className={cn(
       'min-h-screen w-full',
-      variant === 'glass' && 'backdrop-blur-sm',
-      className
+      variant === 'glass' ? 'backdrop-blur-sm' : '',
+      className || ''
     )}>
       <div className="container mx-auto max-w-lg px-6 py-8">
         {children}

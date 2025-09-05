@@ -1,10 +1,11 @@
 'use client';
 
 import { useState } from 'react';
-import { ChevronRight, ChevronDown, Shield, AlertTriangle } from 'lucide-react';
+import { ChevronRight, ChevronDown, Shield, AlertTriangle, Phone } from 'lucide-react';
 import { StateGuide, Language } from '@/lib/types';
 import { TRANSLATIONS } from '@/lib/constants';
 import { cn } from '@/lib/utils';
+import Link from 'next/link';
 
 interface StateGuideCardProps {
   guide: StateGuide;
@@ -54,7 +55,7 @@ export function StateGuideCard({ guide, language, variant = 'default' }: StateGu
   return (
     <div className={cn(
       'glass-card p-6 space-y-4',
-      variant === 'compact' && 'p-4 space-y-3'
+      variant === 'compact' ? 'p-4 space-y-3' : ''
     )}>
       <div className="text-center mb-6">
         <h2 className="text-xl font-bold text-white mb-2">{guide.title}</h2>
@@ -97,6 +98,18 @@ export function StateGuideCard({ guide, language, variant = 'default' }: StateGu
                       </li>
                     ))}
                   </ul>
+                  
+                  {section.id === 'contacts' && (
+                    <div className="mt-4 pt-3 border-t border-white border-opacity-20">
+                      <Link 
+                        href="/emergency"
+                        className="inline-flex items-center space-x-2 text-purple-300 hover:text-purple-200 text-sm font-medium"
+                      >
+                        <Phone className="w-4 h-4" />
+                        <span>View All Emergency Contacts</span>
+                      </Link>
+                    </div>
+                  )}
                 </div>
               )}
             </div>
