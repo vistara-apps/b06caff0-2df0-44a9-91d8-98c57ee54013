@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { MapPin, RefreshCw } from 'lucide-react';
 import { LocationData, Language } from '@/lib/types';
 import { TRANSLATIONS } from '@/lib/constants';
@@ -18,7 +18,7 @@ export function LocationDisplay({ language, onLocationChange }: LocationDisplayP
 
   const t = TRANSLATIONS[language];
 
-  const fetchLocation = async () => {
+  const fetchLocation = useCallback(async () => {
     setLoading(true);
     setError(null);
 
@@ -36,11 +36,11 @@ export function LocationDisplay({ language, onLocationChange }: LocationDisplayP
     } finally {
       setLoading(false);
     }
-  };
+  }, [onLocationChange, t.locationUnavailable, t.error]);
 
   useEffect(() => {
     fetchLocation();
-  }, []);
+  }, [fetchLocation]);
 
   return (
     <div className="glass-card p-4">
