@@ -1,0 +1,30 @@
+{
+  "accountAssociation": {
+    "header": "",
+    "payload": "",
+    "signature": ""
+  },
+  "frame": {
+    "version": "1",
+    "name": "Know Your Rights Card",
+    "subtitle": "Built with Zara",
+    "description": "Know Your Rights Card is a Base Mini App built with Zara.",
+    "iconUrl": "https://0co.to/images/zara-2.png",
+    "homeUrl": "https://b06caff02df044a991d898c57ee54013-o84r.vercel.app",
+    "splashImageUrl": "https://b06caff02df044a991d898c57ee54013-o84r.vercel.app/splash.png",
+    "splashBackgroundColor": "#000000",
+    "heroImageUrl": "https://b06caff02df044a991d898c57ee54013-o84r.vercel.app/image.png",
+    "tagline": "Know Your Rights Card",
+    "screenshotUrls": [
+      "https://b06caff02df044a991d898c57ee54013-o84r.vercel.app/screenshot.png",
+      "https://b06caff02df044a991d898c57ee54013-o84r.vercel.app/screenshot.png"
+    ],
+    "primaryCategory": "social",
+    "tags": [
+      "base",
+      "miniapp",
+      "onchainkit"
+    ],
+    "webhookUrl": "https://b06caff02df044a991d898c57ee54013-o84r.vercel.app/api/webhook"
+  }
+}
